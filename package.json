@@ -1,0 +1,22 @@
+{
+  "name": "warehouse-api",
+  "version": "1.0.0",
+  "description": "Warehouse API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tepn11/whapi.git"
+  },
+  "author": "scabusas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tepn11/whapi/issues"
+  },
+  "homepage": "https://github.com/tepn11/whapi#readme",
+  "dependencies": {
+    "hapi": "^16.6.0"
+  }
+}

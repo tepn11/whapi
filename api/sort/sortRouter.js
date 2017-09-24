@@ -1,17 +1,11 @@
 'use strict';
 
-module.exports = function(server) {
+module.exports = function(app) {
   let sortController = require('./sortController');
 
-  server.route({
-    method: 'POST',
-    path: '/api/sort',
-    handler: sortController.sort
-  });
+  app.route('/')
+    .get(sortController.welcome);
 
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: sortController.welcome
-  });
+  app.route('/api/sort')
+    .post(sortController.sort);
 };

@@ -6,9 +6,12 @@ let welcome = (request, reply) => {
   reply('Welcome to Warehouse API');
 }
 
-let sort = (request, reply) => {
-  let sorted = sortModel.sort();
-  reply(sorted);
+let sort = (req, res) => {
+  let body = req.body;
+  sortModel.sort(body.data)
+    .then((sorted) => {
+      res.json(sorted)
+  })
 }
 
 module.exports = {

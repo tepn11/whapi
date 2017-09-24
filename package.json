@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/tepn11/whapi#readme",
   "dependencies": {
-    "hapi": "^16.6.0"
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4"
   }
 }

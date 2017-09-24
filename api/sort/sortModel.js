@@ -1,5 +1,6 @@
 'use strict';
 
+var Promise = require('bluebird');
 var lineArr = [];
 var lineMap = new Map();
 
@@ -29,9 +30,9 @@ let initArray = () => {
     } else {
       for(bin=maxBin; bin>=minBin; bin--) {
         binObj.bin = bin;
-        lineArr.push('R'+aisle+'*'+bin); 
+        lineArr.push('R'+aisle+'*'+bin);
         lineMap.set('R'+aisle+'*'+bin, binObj);
-        lineArr.push(('R'+(aisle + 1))+'*'+bin); 
+        lineArr.push(('R'+(aisle + 1))+'*'+bin);
         lineMap.set(('R'+(aisle + 1))+'*'+bin, binObj);
       }
       asc = true;
@@ -62,7 +63,6 @@ let sort = (unsorted) => {
   }
 
   sorted = sorted.filter(n => true);
-  console.log("Sorted", this.sorted);
 
   let formattedSort = [];
   let prev;
@@ -80,21 +80,10 @@ let sort = (unsorted) => {
     });
   });
 
-  return {
-    sortedItems: sorted,
-    formattedSort: formattedSort
-  };
+  return Promise.resolve(formattedSort);
 }
 
 initArray();
-
-let sort = () => {
-  console.log('Begin sort');
-  let sortedData = {
-    sorted: true
-  }
-  return sortedData;
-}
 
 module.exports = {
   sort

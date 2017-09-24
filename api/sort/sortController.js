@@ -2,8 +2,8 @@
 
 let sortModel = require('./sortModel');
 
-let welcome = (request, reply) => {
-  reply('Welcome to Warehouse API');
+let welcome = (req, res) => {
+  res.send('Welcome to Warehouse API');
 }
 
 let sort = (req, res) => {
